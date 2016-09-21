@@ -1,7 +1,5 @@
 /vendor
 /node_modules
 /public/storage
-/DB
 Homestead.yaml
 Homestead.json
-.lock
