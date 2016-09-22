@@ -4,19 +4,26 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
+              <div class="panel-heading">Deze leervraag is {{$result->created_at->diffForHumans()}} gemaakt.</div>
                 <div class="panel-body">
-                  <ul>
-                    @if(isset($error))
-                      <p style="color:red;">Er moet een checkbox aangevinkt zijn!</p>
-                    @endif        
-                      <p>Deze leervraag is {{$result->created_at->diffForHumans()}} gemaakt. </p>
-                        {{Form::open(array('route' => array('topic.update', $result->id), 'method' => 'PATCH','onsubmit' => 'return validateForm();'))}}
-                         {{ Form::text('title', $result->topic_title, ['class' => 'form-control', 'required']) }}
-                          <?php echo Form::textarea('description', $result->topic_description, ['class' => 'form-control', 'required']) ?>
-                            @if($user->role == 1)
-                           <input type="checkbox" name="notify"> Verstuur notificatie?<br>
-                           @endif
-                       <p><strong>Tags</strong></p>
+                  
+                  {{Form::open(array('route' => array('topic.update', $result->id), 'method' => 'PATCH','onsubmit' => 'return validateForm();'))}}
+                  @if(isset($error))
+                    <p style="color:red;">Er moet een checkbox aangevinkt zijn!</p>
+                  @endif        
+                  <div class="form-group">
+                    {{ Form::label('name', 'Titel:') }}
+                    {{ Form::text('title', $result->topic_title, ['class' => 'form-control', 'required']) }}
+                    <br>
+                    {{ Form::label('description', 'Beschrijving:') }}
+                    {{ Form::textarea('description', $result->topic_description, ['class' => 'form-control', 'required']) }}
+                    <br>
+                    {{ Form::label('tags', 'Tags:') }}
+                  </div>
+
+                    @if($user->role == 1)
+                      <input type="checkbox" name="notify"> Verstuur notificatie?<br>
+                    @endif
                         <div class="topic_tags" style="overflow-y:scroll;height:100px;">
                           @foreach($tags as $tag)    
                               <input type="checkbox" name="new_tags[]" value="<?= $tag->id?>">{{$tag->tag_name}}<br>
@@ -28,7 +35,6 @@
                       @if(Auth::check())
                         <?php   $user = \Auth::user(); ?>
                       @endif
-                  </ul>
                 </div>
             </div>
         </div>
