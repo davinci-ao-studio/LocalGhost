@@ -16,8 +16,13 @@
 //     return redirect('/register');
 // });
 
-    //Topic route
-Route::resource('/topic', 'TopicController',
+Route::get('/', function(){
+    return redirect('/queue');
+});
+
+//Topic route
+//Route::resource('/topic', 'TopicController',
+Route::resource('/queue', 'QueueController',
         ['only' => ['index']]);
 
     //Searchbar post route
@@ -52,7 +57,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/queue/postcomment', 'QueueController@postcomment');
 
     //Topic close post
-    Route::post('/topic/close', 'TopicController@close');
+    //Route::post('/topic/close', 'TopicController@close');
     
     //Search Post
     Route::post('/search', 'SearchController@index',
@@ -72,7 +77,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('/notificaties', 'NotificationController');
 
     //Topic route.
-    Route::resource('/topic', 'TopicController');
+    //Route::resource('/topic', 'TopicController');
     
 
     //Comment route
@@ -93,7 +98,7 @@ Route::group(['middleware' => 'web'], function () {
 
 
     //Topic route
-    Route::resource('/topic', 'TopicController');
+   // Route::resource('/topic', 'TopicController');
 
         //alles waar je alleen bij kan met speciale rechten 
         Route::group(['middleware' => 'role'], function(){

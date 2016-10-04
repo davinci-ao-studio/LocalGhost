@@ -64,12 +64,12 @@
             <div class="navbar-header">
 
                 <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+<!--                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
+                </button> -->
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -85,14 +85,14 @@
             @else
             <!-- Drop down menu als de gebruiker is ingelogd.  -->
             <div class="dropdown nav navbar-nav">
-             <li class="dropdown">
+<!--              <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="{{url('/topic') }}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
                     <li><a href="{{url('/profile')}}"><i class="fa fa-users" aria-hidden="true"></i> Leerlingen</a></li>
                     <li><a href="{{url('/event')}}"><i class="fa fa-calendar" aria-hidden="true"></i> Agenda</a></li>     
                 </ul>
-              </li>
+              </li> -->
                  
             <li><a href="{{url('/queue')}}"> Direct hulp nodig?</a></li>      
             </div>
@@ -126,7 +126,7 @@
                         <li><a href="{{ url('/beheer') }}">Beheer</a></li>
                     @endif
                     
-                    <li><a href="{{ url('/topic/create')}}">Maak leervraag</a></li>
+                    <!-- <li><a href="{{ url('/topic/create')}}">Maak leervraag</a></li> -->
 
                     <?php         
                         $user = \Auth::user();
@@ -147,7 +147,7 @@
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/profile/<?=$result->id?>"><i class="fa fa-btn fa-user"></i>Profiel</a></li>
-                                <li><a href="{{ url('/notificaties') }}"><i class="fa fa-btn fa-bell"></i>Notificaties</a></li>
+                                <!-- <li><a href="{{ url('/notificaties') }}"><i class="fa fa-btn fa-bell"></i>Notificaties</a></li> -->
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>

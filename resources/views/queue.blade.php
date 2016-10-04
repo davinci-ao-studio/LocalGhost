@@ -118,7 +118,6 @@
   
   update();
 
-
   function checker(data){
     var result = data[0];
     var ticket = document.getElementById("ticket");
@@ -129,9 +128,6 @@
           ticket.innerHTML = '<button id="cancel" onclick="cancelticket(<?=$user->id?>)">Cancel</button>';
     }
   
-
-
-
   }
 
   function InBehandeling(data){
@@ -187,12 +183,12 @@ $(function() {
     $( "#dialog" ).dialog({
       autoOpen: false,
       show: {
-        effect: "blind",
-        duration: 500
+        // effect: "blind",
+        // duration: 500
       },
       hide: {
-        effect: "explode",
-        duration: 500
+        // effect: "explode",
+        // duration: 500
       }
     });
 
@@ -207,12 +203,12 @@ $(function() {
     $( "#dialog_comment" ).dialog({
       autoOpen: false,
       show: {
-        effect: "blind",
-        duration: 500
+       // effect: "blind",
+       // duration: 500
       },
       hide: {
-        effect: "explode",
-        duration: 500
+       // effect: "explode",
+       // duration: 500
       }
     });
 
