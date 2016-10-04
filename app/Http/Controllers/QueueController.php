@@ -55,7 +55,7 @@ public function index(){
 
 	// Als dit niet meer werkt voor gods reden, verrander update naar show
     // Bij update word een queue gepakt die geüpdatet worden en zet ze in behandeling of sluit ze af.
-    public function update($id){
+    public function show($id){
         $queue = Queue::find($id);
         
         if ($queue->status != 1){
