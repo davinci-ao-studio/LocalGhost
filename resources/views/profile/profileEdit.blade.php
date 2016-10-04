@@ -19,10 +19,10 @@
 	                        			<td>{!!Form::label('username', $profiel->name) !!}</td>
 	                      			</tr>
 	                      			<tr>
-				                        <td>Laatste geupdate:</td>
+				                        <td>Laatste geüpdatet:</td>
 				                        <td>{{$profiel->created_at->diffForHumans()}}</td>
 				                    </tr>
-				                      <td>Ov-nummer:</td>
+				                      <td>OV-nummer:</td>
 				                      <td>{{$profiel->ov_number}}</td>
 				                    </tr>
 				                    <tr>
@@ -31,7 +31,7 @@
 				                    </tr>
 
 				                    <tr>
-				                    	<td>Toon email?</td>
+				                    	<td>Toon e-mail?</td>
 				                    	<td><input type="checkbox" name="email_privacy" <?= ($privacy[0]->email_active == 1) ? 'checked' : ''; ?>></td>
 				                    </tr>
 	                    		</tbody>
